@@ -10,18 +10,36 @@
     <title>Etch-a-Sketch</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!--[if lt IE 7]>
-      <p class="browsehappy">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="#">upgrade your browser</a> to improve your experience.
-      </p>
-    <![endif]-->
-    <button type="button" class="btn">Number of Squares</button>
-    <div class="container" id="hoverMouse"></div>
+    <h2>Etch-a-Sketch</h2>
+    <div class="header">
+      <input
+        name="input"
+        class="userInput"
+        type="number"
+        required
+        min="2"
+        max="100"
+      />
+      <button id="reset" type="button" class="btn btn-success">RESET</button>
+    </div>
+    <div class="board" id="hoverMouse"></div>
+    <footer>
+      <button class="btn btn-warning">Random Color</button>
+      <button class="btn btn-info">Default</button>
+    </footer>
 
     <script src="app.js" async defer></script>
   </body>
+  <map>
+    <area />
+  </map>
 </html>

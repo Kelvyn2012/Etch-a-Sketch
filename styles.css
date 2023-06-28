@@ -1,7 +1,5 @@
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 html,
 body {
@@ -13,24 +11,41 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  background-image: url("./images/universe.jpeg");
 }
-.container {
+.board {
   display: flex;
   flex-wrap: wrap;
-  background-color: beige;
+  background-color: white;
   width: 480px;
   height: 480px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.container > div {
+.board > div {
   border: 1px solid black;
   height: 30px;
   width: 30px;
 }
-.btn {
-  height: 50px;
-  width: 100px;
-  display:inline-block;
+button {
   align-items: center;
   cursor: pointer;
+}
+
+h2 {
+  color: white;
+  font-style: italic;
+  align-self: flex-start;
+  margin-left: 20px;
+}
+.header {
+  display: flex;
+  gap: 10px;
+ 
+}
+footer {
+  display: flex;
+  gap: 10px;
 }
