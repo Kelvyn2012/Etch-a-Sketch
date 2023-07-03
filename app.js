@@ -3,7 +3,7 @@ const btn = document.querySelector(".btn");
 const board = document.querySelector(".board");
 const reset = document.querySelector(".btn-info");
 
-let rows = 20;
+let rows = 15;
 let color = "red";
 
 function populate(rows) {
@@ -21,14 +21,18 @@ function populate(rows) {
     div2.style.height = size / rows + "px";
   }
 }
+populate(rows);
 
-function colorDivs() {
-  this.style.backgroundColor = color;
+function colorDivs(e) {
+  if (color === "random") {
+    e.target.style.backgroundColor = `hsl(${Math.random() * 360} 100% 50%)`;
+  } else {
+    e.target.style.backgroundColor = color;
+  }
 }
 function changeColor(choice) {
   color = choice;
 }
-populate(rows);
 
 btn.addEventListener("click", (e) => {
   let input = document.getElementById("numInput");
@@ -45,7 +49,3 @@ reset.addEventListener("click", (e) => {
   board.replaceChildren();
   populate(rows);
 });
-
-function randomColor() {
-  return Math.floor(Math.random() + 1);
-}
