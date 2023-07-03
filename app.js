@@ -1,6 +1,7 @@
 const hover = document.getElementById("hoverMouse");
 const btn = document.querySelector(".btn");
 const board = document.querySelector(".board");
+const reset = document.querySelector(".btn-info");
 
 let rows = 40;
 
@@ -28,9 +29,18 @@ btn.addEventListener("click", (e) => {
   let input = document.getElementById("numInput");
   // remove children div
   if (!input.value) {
-    console.log("no input")
+    console.log("no input");
   } else {
     board.replaceChildren();
     populate(input.value);
   }
 });
+
+reset.addEventListener("click", (e) => {
+  board.replaceChildren();
+  populate(rows);
+});
+
+function randomColor() {
+  return Math.floor(Math.random() + 1);
+}
