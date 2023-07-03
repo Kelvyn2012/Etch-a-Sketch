@@ -1,9 +1,10 @@
-const hover = document.getElementById("hoverMouse");
+const hover = document.querySelector(".hoverMouse");
 const btn = document.querySelector(".btn");
 const board = document.querySelector(".board");
 const reset = document.querySelector(".btn-info");
 
-let rows = 40;
+let rows = 20;
+let color = "red";
 
 function populate(rows) {
   let grid = rows * rows;
@@ -14,15 +15,19 @@ function populate(rows) {
 
   for (let i = 0; i < grid; i++) {
     const div2 = document.createElement("div");
+    div2.addEventListener("mouseover", colorDivs);
     board.appendChild(div2);
     div2.style.width = size / rows + "px";
     div2.style.height = size / rows + "px";
   }
 }
 
-hover.addEventListener("mouseover", (event) => {
-  event.target.style.backgroundColor = "red";
-});
+function colorDivs() {
+  this.style.backgroundColor = color;
+}
+function changeColor(choice) {
+  color = choice;
+}
 populate(rows);
 
 btn.addEventListener("click", (e) => {
